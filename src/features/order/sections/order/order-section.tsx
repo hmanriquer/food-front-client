@@ -15,7 +15,7 @@ export function OrderSection({ clear, orders, total }: OrderPanel) {
   return (
     <section
       data-testid="order-section"
-      className="sticky top-0 z-50 h-full w-full overflow-y-auto rounded-lg bg-white p-4 shadow-sm lg:w-96 dark:bg-neutral-900"
+      className="sticky top-20 z-50 h-full w-full overflow-y-auto rounded-lg bg-white p-4 shadow-sm lg:w-96 dark:bg-neutral-900"
     >
       <header className="mb-6 flex items-center justify-between">
         <h2 className="text-2xl font-bold">Orden</h2>
@@ -31,7 +31,7 @@ export function OrderSection({ clear, orders, total }: OrderPanel) {
       <Separator className="my-4" />
       <div className="flex flex-col gap-4">
         {orders.length === 0 ? (
-          <span className="text-muted-foreground text-center">
+          <span className="text-muted-foreground text-center text-sm">
             No hay productos en la orden.
           </span>
         ) : (
@@ -53,15 +53,16 @@ export function OrderSection({ clear, orders, total }: OrderPanel) {
 }
 
 const PaymentSumary = ({ total }: { total: number }) => (
-  <footer className="mb-6 pt-4">
+  <footer className="pt-4">
     <h2 className="mb-4 text-lg font-semibold">Resumen de pago</h2>
     <div className="space-y-2">
-      <section className="mt-2 flex justify-between border-t pt-2">
+      <section className="mt-2 flex justify-between">
         <h3 className="text-neutral-500">Total</h3>
         <p className="font-semibold">{formatPrice(total)}</p>
       </section>
     </div>
     <PaymentMethods />
+    <Button className="w-full">Pagar</Button>
   </footer>
 )
 
