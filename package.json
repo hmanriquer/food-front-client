@@ -8,7 +8,13 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "cypress": "cypress open",
+    "cypress:run": "cypress run",
+    "test:e2e": "cypress run --e2e",
+    "test:component": "cypress run --component",
+    "test:e2e:dev": "cypress open --e2e",
+    "test:component:dev": "cypress open --component"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -47,12 +53,16 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@cypress/react": "^9.0.1",
+    "@cypress/vite-dev-server": "^6.0.3",
     "@tanstack/router-plugin": "^1.116.1",
     "@tauri-apps/cli": "^2",
+    "@testing-library/cypress": "^10.0.3",
     "@types/node": "^22.14.1",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "cypress": "^14.3.1",
     "prettier": "^3.5.3",
     "prettier-plugin-import-sort": "^0.0.7",
     "prettier-plugin-tailwindcss": "^0.6.11",
